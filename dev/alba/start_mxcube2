@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+CONTAINER=mx3_deb9_alba
+
+LOGS=$MXCUBE2_ROOT/../log:/MXCuBE/log
+GUIS=$MXCUBE2_ROOT/../guis:/MXCuBE/guis
+XML=$MXCUBE2_ROOT/../HardwareObjects.xml:/MXCuBE/HardwareObjects.xml
+MXCUBE=$MXCUBE2_ROOT:/MXCuBE/mxcube
+PORT=10000:10000
+xhost +local:
+exec docker run -it -h=$CONTAINER -p $PORT -v $MXCUBE -v $GUIS -v $XML -v $LOGS  -e DISPLAY=$DISPLAY -e QT_X11_NO_MITSHM=1 -v /tmp/.X11-unix:/tmp/.X11-unix $CONTAINER
