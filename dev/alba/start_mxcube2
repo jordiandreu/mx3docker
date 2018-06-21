@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 CONTAINER=mx3_deb9_alba
 
-LOGS=$MXCUBE2_ROOT/../log:/MXCuBE/log
-GUIS=$MXCUBE2_ROOT/../guis:/MXCuBE/guis
-XML=$MXCUBE2_ROOT/../HardwareObjects.xml:/MXCuBE/HardwareObjects.xml
+LOGS=$MXCUBE2_ROOT/../local/log:/MXCuBE/log
+GUIS=$MXCUBE2_ROOT/../local/guis:/MXCuBE/guis
+XML=$MXCUBE2_ROOT/../local/HardwareObjects.xml:/MXCuBE/HardwareObjects.xml
 MXCUBE=$MXCUBE2_ROOT:/MXCuBE/mxcube
 PORT=10000:10000
 xhost +local:
